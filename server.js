@@ -3,6 +3,7 @@ const dotenv = require('dotenv');
 const errorHandler = require('./middleware/errors');
 // Route files
 const bootcamps = require('./routes/bootcamps');
+const courses = require('./routes/courses');
 // const logger = require('./middleware/logger');
 const morgan = require('morgan');
 const connectDB = require('./config/db');
@@ -23,6 +24,7 @@ if (process.env.NODE_ENV === 'development') {
 
 // Mount routers
 app.use('/api/v1/bootcamps', bootcamps);
+app.use('/api/v1/courses', courses);
 
 app.use(errorHandler);
 
